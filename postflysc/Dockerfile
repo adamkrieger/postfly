@@ -16,12 +16,7 @@ RUN ["rm", "-rf", "/usr/local/bin/flyway-5.2.4/jre"]
 # Remove working files
 RUN ["rm", "-rf", "/home/tmp"]
 
-COPY ./postflysc/target/postflysc-0.0.1-SNAPSHOT.jar /app/postflysc.jar
-COPY ./startup.sh /app/startup.sh
-COPY ./startpostflyapi.sh /app/startpostflyapi.sh
-
 VOLUME /db
 VOLUME /scripts
 
-ENTRYPOINT [""]
-CMD ["/app/startup.sh"]
+CMD ["postgres"]
