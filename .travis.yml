@@ -1,0 +1,13 @@
+sudo: required
+
+language: java
+jdk:
+  - openjdk8
+
+services:
+  - docker
+
+script:
+  - . ./build.sh
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - . ./push.sh
